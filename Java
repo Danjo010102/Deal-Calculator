@@ -1,0 +1,30 @@
+function calculateDeal() {
+    const originalPrice = parseFloat(document.getElementById('originalPrice').value);
+    const discountPercentage = parseFloat(document.getElementById('discountPercentage').value);
+    const taxPercentage = parseFloat(document.getElementById('taxPercentage').value);
+    const additionalFees = parseFloat(document.getElementById('additionalFees').value);
+
+    if (isNaN(originalPrice) || isNaN(discountPercentage) || isNaN(taxPercentage) || isNaN(additionalFees)) {
+        alert('Please fill in all fields with valid numbers.');
+        return;
+    }
+
+    const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
+    const priceAfterTax = discountedPrice + (discountedPrice * (taxPercentage / 100));
+    const finalPrice = priceAfterTax + additionalFees;
+
+    document.getElementById('discountedPrice').innerText = `Discounted Price: $${discountedPrice.toFixed(2)}`;
+    document.getElementById('priceAfterTax').innerText = `Price After Tax: $${priceAfterTax.toFixed(2)}`;
+    document.getElementById('finalPrice').innerText = `Final Price: $${finalPrice.toFixed(2)}`;
+}
+
+function clearFields() {
+    document.getElementById('originalPrice').value = '';
+    document.getElementById('discountPercentage').value = '';
+    document.getElementById('taxPercentage').value = '';
+    document.getElementById('additionalFees').value = '';
+    
+    document.getElementById('discountedPrice').innerText = '';
+    document.getElementById('priceAfterTax').innerText = '';
+    document.getElementById('finalPrice').innerText = '';
+}
