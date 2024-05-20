@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Kestrel Properties Logo" class="logo">
+        <h1>Deal Calculator</h1>
+        <label for="originalPrice">Original Price:</label>
+        <input type="number" id="originalPrice" placeholder="Enter original price">
+        
+        <label for="discountPercentage">Discount Percentage:</label>
+        <input type="number" id="discountPercentage" placeholder="Enter discount percentage">
+        
+        <label for="taxPercentage">Sales Tax Percentage:</label>
+        <input type="number" id="taxPercentage" placeholder="Enter tax percentage">
+        
+        <label for="additionalFees">Additional Fees:</label>
+        <input type="number" id="additionalFees" placeholder="Enter additional fees">
+        
+        <button onclick="calculateDeal()">Calculate</button>
+        <button onclick="clearFields()">Clear</button>
+        
+        <h2>Results:</h2>
+        <p id="discountedPrice"></p>
+        <p id="priceAfterTax"></p>
+        <p id="finalPrice"></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
